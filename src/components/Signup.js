@@ -1,29 +1,22 @@
 import React, { Component } from 'react';
 
-class SignIn extends Component {
+class SignUp extends Component {
 
   state = {
-    userName: '',
-    userPassword: ''
+    text: ''
   }
 
   handleOnChange(event) {
-    console.log(event.target.attributes[1].nodeValue);
-    if(event.target.attributes[1].nodeValue === "password"){
+    console.log(event.target.value);
     this.setState({
-      ...this.state,
-      userPassword: event.target.value
+      name: event.target.value,
     });
-    } else {
-      this.setState({
-        ...this.state,
-        userName: event.target.value
-      });
-    }
   }
 
   handleOnSubmit(event) {
     event.preventDefault();
+    console.log(this.state.name)
+    
     this.setState({
       text: '',
     });
@@ -33,17 +26,17 @@ class SignIn extends Component {
     return (
       <div>
         <form onSubmit={(event) => this.handleOnSubmit(event)}>
-        <input
+          <input
             type="text"
             name="name"
             placeholder="name"
-            value={this.state.userName}
+            value={this.state.text}
             onChange={(event) => this.handleOnChange(event)} />
           <input 
             type="text"
             name="password"
             placeholder="password"
-            value={this.state.userPassword}
+            value={this.state.text}
             onChange={(event) => this.handleOnChange(event)} />
           <input type="submit" />
         </form>
@@ -52,4 +45,4 @@ class SignIn extends Component {
   }
 };
 
-export default SignIn;
+export default SignUp;
