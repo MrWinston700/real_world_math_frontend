@@ -8,8 +8,7 @@ class SignIn extends Component {
   }
 
   handleOnChange(event) {
-    console.log(event.target.attributes[1].nodeValue);
-    if(event.target.attributes[1].nodeValue === "password"){
+    if(event.target.name === "password"){
     this.setState({
       ...this.state,
       userPassword: event.target.value

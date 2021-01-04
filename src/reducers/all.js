@@ -11,6 +11,7 @@ function registrationReducer(state = [], action) {
   let idx;
   switch (action.type) {
     case "ADD_NEW_USER":
+      console.log("reducer file");
       return [...state, action.book];
  
     case "LOG_IN":

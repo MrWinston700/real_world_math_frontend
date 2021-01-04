@@ -3,20 +3,27 @@ import React, { Component } from 'react';
 class SignUp extends Component {
 
   state = {
-    text: ''
+    userName: '',
+    userPassword: ''
   }
 
   handleOnChange(event) {
-    console.log(event.target.value);
+    console.log(event.target.attributes[1].nodeValue);
+    if(event.target.attributes[1].nodeValue === "password"){
     this.setState({
-      name: event.target.value,
+      ...this.state,
+      userPassword: event.target.value
     });
+    } else {
+      this.setState({
+        ...this.state,
+        userName: event.target.value
+      });
+    }
   }
 
   handleOnSubmit(event) {
     event.preventDefault();
-    console.log(this.state.name)
-    
     this.setState({
       text: '',
     });
@@ -26,17 +33,17 @@ class SignUp extends Component {
     return (
       <div>
         <form onSubmit={(event) => this.handleOnSubmit(event)}>
-          <input
+        <input
             type="text"
             name="name"
             placeholder="name"
-            value={this.state.text}
+            value={this.state.userName}
             onChange={(event) => this.handleOnChange(event)} />
           <input 
             type="text"
             name="password"
             placeholder="password"
-            value={this.state.text}
+            value={this.state.userPassword}
             onChange={(event) => this.handleOnChange(event)} />
           <input type="submit" />
         </form>
