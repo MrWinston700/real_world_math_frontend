@@ -17,7 +17,7 @@ function App() {
         <Navbar />
         <Route exact path="/" component={Home} />
         <Route exact path="/actors" component={Home} />
-        <Route exact path="/directors" component={Home} />
+        
       </div>
     </Router>
     <SignIn/>
