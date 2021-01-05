@@ -18,7 +18,6 @@ function App() {
         <Route exact path="/" component={Home} />
         <Route exact path="/actors" component={Home} />
         <Route exact path="/directors" component={Home} />
-        <Route exact path="/movies" component={Home} />
       </div>
     </Router>
     <SignIn/>

@@ -13,7 +13,7 @@ class SignIn extends Component {
       ...this.state,
       userPassword: event.target.value
     });
-    } else {
+    } else if (event.target.name === "name") {
       this.setState({
         ...this.state,
         userName: event.target.value
