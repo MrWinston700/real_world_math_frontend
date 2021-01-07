@@ -6,10 +6,20 @@ import {
   Route
 } from 'react-router-dom';
 import Home from './components/Home';
-import signIn from './components/Signup'
+import Signup from './components/Signup'
 import SignIn from './components/Signin';
+import React, { Component } from 'react';
 
-function App() {
+class App extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      loggedInStatus: "NOT_LOGGED_IN",
+      user: {}
+    };
+  }
+  render() {
   return (
     <div className="App">
       <Router>
@@ -17,12 +27,13 @@ function App() {
         <Navbar />
         <Route exact path="/" component={Home} />
         <Route exact path="/actors" component={Home} />
-        
       </div>
     </Router>
     <SignIn/>
+    <Signup/>
     </div>
   );
+  }
 }
 
 export default App;
