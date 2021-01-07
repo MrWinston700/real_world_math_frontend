@@ -15,6 +15,18 @@ class SignUp extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
+  componentDidMount() {
+    this.openForm()
+  }
+  closeForm() {
+    document.getElementById("myForm").style.display = "none";
+    console.log("inside close form")
+  }
+
+  openForm() {
+    document.getElementById("myForm").style.display = "block";
+    console.log("hitting open form")
+  }
 
   handleChange(event) {
     this.setState({
@@ -49,9 +61,13 @@ class SignUp extends Component {
   }
 
   render() {
+    console.log("signup");
     return (
+      
       <div>
-        <form onSubmit={this.handleSubmit}>
+      <div className="form-popup" id="myForm">
+        <form className="form-container" onSubmit={this.handleSubmit}>
+          <h1>Sign up</h1>
           <input
             type="email"
             name="email"
@@ -79,9 +95,11 @@ class SignUp extends Component {
             required
           />
 
-          <button type="submit">Register</button>
+          <button type="submit" className="btn">Sign up</button>
+          <button type="button" className="btn cancel" onClick={this.closeForm}>Close</button>
         </form>
       </div>
+    </div>
     );
   }
 }

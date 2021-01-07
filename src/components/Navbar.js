@@ -34,13 +34,21 @@ class Navbar extends Component {
           }}
         >About</NavLink>
         <NavLink
-          to="/"
+          to="/signin"
           exact
           style={link}
           activeStyle={{
             background: 'darkblue'
           }}
         >Login</NavLink>
+        <NavLink
+          to="/signup"
+          exact
+          style={link}
+          activeStyle={{
+            background: 'darkblue'
+          }}
+        >Sign Up!</NavLink>
       </div>
     )
   }

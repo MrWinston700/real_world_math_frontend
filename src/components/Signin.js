@@ -15,7 +15,7 @@ class SignIn extends Component {
   }
    
   componentDidMount() {
-  
+    this.openForm()
   }
 
   closeForm() {
@@ -60,11 +60,11 @@ class SignIn extends Component {
   }
 
   render() {
+    console.log("signin");
     return (
       
       
       <div>
-        <button className="open-button" onClick={this.openForm}>Open Form</button>
         <div className="form-popup" id="myForm">
           <form className="form-container" onSubmit={this.handleSubmit}>
             <h1>Login</h1>
