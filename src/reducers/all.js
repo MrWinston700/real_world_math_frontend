@@ -23,6 +23,6 @@ function registrationReducer(state = [], action) {
   }
 }
  
-function authorsReducer(state = [], action) {
+function Reducer(state = [], action) {
   
 }

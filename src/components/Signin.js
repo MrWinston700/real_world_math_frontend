@@ -16,8 +16,16 @@ class SignIn extends Component {
    
   componentDidMount() {
   
-    let docs =  document.getElementById("myForm").style.display = "block";
-    debugger
+  }
+
+  closeForm() {
+    document.getElementById("myForm").style.display = "none";
+    console.log("inside close form")
+  }
+
+  openForm() {
+    document.getElementById("myForm").style.display = "block";
+    console.log("hitting open form")
   }
 
   handleChange(event) {
@@ -54,29 +62,34 @@ class SignIn extends Component {
   render() {
     return (
       
+      
       <div>
-        <button className="open-button" onClick={console.log("I got clicked")}>Open Form</button>
-        <form className="form-popup" id="myForm" onSubmit={this.handleSubmit}>
-          <input
-            type="email"
-            name="email"
-            placeholder="Email"
-            value={this.state.email}
-            onChange={this.handleChange}
-            required
-          />
+        <button className="open-button" onClick={this.openForm}>Open Form</button>
+        <div className="form-popup" id="myForm">
+          <form className="form-container" onSubmit={this.handleSubmit}>
+            <h1>Login</h1>
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              value={this.state.email}
+              onChange={this.handleChange}
+              required
+            />
 
-          <input
-            type="password"
-            name="password"
-            placeholder="Password"
-            value={this.state.password}
-            onChange={this.handleChange}
-            required
-          />
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+              value={this.state.password}
+              onChange={this.handleChange}
+              required
+            />
 
-          <button type="submit">Login</button>
-        </form>
+            <button type="submit" className="btn">Login</button>
+            <button type="button" className="btn cancel" onClick={this.closeForm}>Close</button>
+          </form>
+        </div>
       </div>
     );
   }
