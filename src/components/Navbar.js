@@ -15,6 +15,14 @@ class Navbar extends Component {
     return (
       <div>
         <NavLink
+          to="/question"
+          exact
+          style={link}
+          activeStyle={{
+            background: 'darkblue'
+          }}
+        >Get a question</NavLink>
+        <NavLink
           to="/"
           /* set exact so it knows to only set activeStyle when route is deeply equal to link */
           exact
