@@ -8,20 +8,23 @@ class Question extends Component {
 //     //
 //     console.log(questionData.question);
 //     const question = questionData.question
+
+constructor(props) {
+  super(props);
+}
   render() {
     console.log(this.props.question_data);
     const my_question = this.props.question_data
+    this.props.checkAnswer(my_question.multi_answers[0])
     return (
 
       <div>
         <h1>Topic: </h1>
         <h2>{my_question.read_me}</h2>
-        <ol>
-            <li>human #1</li>
-            <li>human #2</li>
-            <li>they didn't make it</li>
-            <li>all of the above</li>
-        </ol>
+            <button onClick ={() => this.props.checkAnswer(my_question.multi_answers[0])} >{my_question.multi_answers[0]}</button>
+            <button onClick ={() => this.props.checkAnswer(my_question.multi_answers[1])}>{my_question.multi_answers[1]}</button>
+            <button onClick ={() => this.props.checkAnswer(my_question.multi_answers[2])}>{my_question.multi_answers[2]}</button>
+            <button onClick ={() => this.props.checkAnswer(my_question.multi_answers[3])}>{my_question.multi_answers[3]}</button>
       </div>
     );
   }

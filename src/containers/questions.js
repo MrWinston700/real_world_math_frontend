@@ -10,8 +10,14 @@ class Questions extends Component {
   // }
 
 
-  checkAnswer(clientAnswer) {
+  checkAnswer = data => {
+    console.log(data);
+    const answer = this.props.questionData.question[0].question.answer
+    if (data === answer) {
+      
+    } else {
 
+    }
   }
   render() {
     
@@ -20,14 +26,14 @@ class Questions extends Component {
       return (
         <div>
           <ul>
-            {<Question question_data={this.props.questionData.question[0].question}/>}
+            {<Question question_data={this.props.questionData.question[0].question} checkAnswer={this.checkAnswer}/>}
           </ul>
         </div>
       );
     } else {
   
       return (
-        <div></div>
+        <div>Loading...</div>
       )
     }
 
