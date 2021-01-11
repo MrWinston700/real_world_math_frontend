@@ -8,7 +8,7 @@ import {
 import Home from './components/Home';
 import SignUp from './components/Signup'
 import SignIn from './components/Signin';
-import Question from './components/Question'
+import Questions from './containers/questions'
 import React, { Component } from 'react';
 
 class App extends Component {
@@ -26,7 +26,7 @@ class App extends Component {
       <Router>
       <div>
         <Navbar />
-        <Route exact path="/question" component={Question} />
+        <Route exact path="/question" component={Questions} />
         <Route exact path="/" component={Home} />
         <Route exact path="/signin" component={SignIn} />
         <Route exact path="/signup" component={SignUp} />

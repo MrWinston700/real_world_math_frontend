@@ -1,6 +1,8 @@
 import React, { Component }from 'react'
 import { NavLink } from 'react-router-dom';
- 
+import { get_question } from '../actions/index'
+import { connect } from 'react-redux';
+
 const link = {
   width: '100px',
   padding: '12px',
@@ -11,10 +13,15 @@ const link = {
 }
  
 class Navbar extends Component {
+  get(){
+    this.props.get_question()
+  }
   render() {
     return (
       <div>
         <NavLink
+          id = "my_get"
+          onClick={() => this.props.get_question()}
           to="/question"
           exact
           style={link}
@@ -62,4 +69,14 @@ class Navbar extends Component {
   }
 }
  
-export default Navbar;
+
+const mapStateToProps = state => {
+  return { question: state.question }
+}
+const mapDispatchToProps = dispatch => {
+  return {
+    get_question: () => dispatch(get_question())
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Navbar);

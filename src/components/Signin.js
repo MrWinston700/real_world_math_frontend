@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import axios from "axios";
+import { connect } from 'react-redux';
+import { sign_in } from '../actions/index'
+
 class SignIn extends Component {
   constructor(props) {
     super(props);
@@ -50,7 +53,7 @@ class SignIn extends Component {
       )
       .then(response => {
         if (response.data.logged_in) {
-          this.props.handleSuccessfulAuth(response.data);
+          this.props.sign_in(response.data);
         }
       })
       .catch(error => {
@@ -96,4 +99,16 @@ class SignIn extends Component {
 }
 
 
-export default SignIn;
+const mapStateToProps = state => {
+  return {
+    catPics: state.cats,
+    loading: state.loading
+  }
+}
+ 
+const mapDispatchToProps = dispatch => {
+  return {
+    sign_in: () => dispatch(sign_in())
+  }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(SignIn)
