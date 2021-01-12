@@ -15,7 +15,6 @@ constructor(props) {
   render() {
     console.log(this.props.question_data);
     const my_question = this.props.question_data
-    this.props.checkAnswer(my_question.multi_answers[0])
     return (
 
       <div>

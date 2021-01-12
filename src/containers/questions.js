@@ -2,21 +2,17 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Question from '../components/Question'
 import { get_question } from '../actions/index'
-
+import  result  from '../components/result'
 class Questions extends Component {
   
-  // componentDidMount() {
-  //   this.props.get_question();
-  // }
-
 
   checkAnswer = data => {
     console.log(data);
     const answer = this.props.questionData.question[0].question.answer
     if (data === answer) {
-      
+      result(true)
     } else {
-
+      result(false)
     }
   }
   render() {

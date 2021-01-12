@@ -2,11 +2,15 @@ import React from 'react';
 
 const result = (response) => {
     console.log(response)
-  return (
-    <div>
-      <h1>truthy of falsy</h1>
-    </div>
-  );
+    if (response === "good") {
+        return (
+            alert("correct")
+        );
+    } else {
+        return (
+            alert("incorrect")
+            );
+    }
 };
 
 export default result;
