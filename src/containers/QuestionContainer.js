@@ -3,26 +3,27 @@ import { connect } from 'react-redux';
 import Question from '../components/Question'
 import { get_question } from '../actions/index'
 import  result  from '../components/result'
-class Questions extends Component {
+import CommentsContainer from './CommentsContainer'
+class QuestionContainer extends Component {
   
 
-  checkAnswer = data => {
-    console.log(data);
+  checkAnswer = userInput => {
     const answer = this.props.questionData.question[0].question.answer
-    if (data === answer) {
+    if (userInput === answer) {
       result(true)
     } else {
       result(false)
     }
   }
   render() {
-    
+    // temporary fix for initial empty state recieved
     if (this.props.questionData.question) {
       console.log(this.props.questionData);
       return (
         <div>
           <ul>
             {<Question question_data={this.props.questionData.question[0].question} checkAnswer={this.checkAnswer}/>}
+            {< CommentsContainer/>}
           </ul>
         </div>
       );
@@ -46,4 +47,4 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Questions);
+export default connect(mapStateToProps, mapDispatchToProps)(QuestionContainer);

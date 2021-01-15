@@ -13,57 +13,41 @@ const link = {
 }
  
 class Navbar extends Component {
-  get(){
-    this.props.get_question()
-  }
   render() {
     return (
-      <div>
+      <div id="head">
+        <nav>
+          <ul>
         <NavLink
-          id = "my_get"
+          className = "navLinks"
           onClick={() => this.props.get_question()}
           to="/question"
           exact
-          style={link}
-          activeStyle={{
-            background: 'darkblue'
-          }}
         >Get a question</NavLink>
         <NavLink
+          className = "navLinks"
           to="/"
           /* set exact so it knows to only set activeStyle when route is deeply equal to link */
           exact
           /* add styling to Navlink */
-          style={link}
-          /* add prop for activeStyle */
-          activeStyle={{
-            background: 'darkblue'
-          }}
         >Home</NavLink>
         <NavLink
+          className = "navLinks"
           to="/"
           exact
-          style={link}
-          activeStyle={{
-            background: 'darkblue'
-          }}
         >About</NavLink>
         <NavLink
+          className = "navLinks"
           to="/signin"
           exact
-          style={link}
-          activeStyle={{
-            background: 'darkblue'
-          }}
         >Login</NavLink>
         <NavLink
+          className = "navLinks"
           to="/signup"
           exact
-          style={link}
-          activeStyle={{
-            background: 'darkblue'
-          }}
         >Sign Up!</NavLink>
+        </ul>
+        </nav>
       </div>
     )
   }

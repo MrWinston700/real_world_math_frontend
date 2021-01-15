@@ -1,8 +1,7 @@
-import React from 'react';
 
 const result = (response) => {
     console.log(response)
-    if (response === "good") {
+    if (response === true) {
         return (
             alert("correct")
         );

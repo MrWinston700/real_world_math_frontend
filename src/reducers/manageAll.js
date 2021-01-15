@@ -2,7 +2,8 @@ import { combineReducers } from "redux";
      
 const rootReducer = combineReducers({
   registration: registrationReducer,
-  question: questionReducer
+  question: questionReducer,
+  comments: commentReducer
 });
  
 export default rootReducer;
@@ -23,8 +24,19 @@ function registrationReducer(state = [], action) {
 function questionReducer(state = [], action) {
   switch (action.type) {
     case "GET_A_QUESTION":
-      console.log("reducer file");
+      console.log("reducer file question");
       return {...state, question: [action.question]}
+
+    default:
+      return state;
+  }
+}
+
+function commentReducer(state = [], action) {
+  switch (action.type) {
+    case "SAVE_COMMENT":
+      console.log("reducer file comment");
+      return {...state, comment: [action.comments]}
 
     default:
       return state;

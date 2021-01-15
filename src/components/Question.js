@@ -9,9 +9,6 @@ class Question extends Component {
 //     console.log(questionData.question);
 //     const question = questionData.question
 
-constructor(props) {
-  super(props);
-}
   render() {
     console.log(this.props.question_data);
     const my_question = this.props.question_data

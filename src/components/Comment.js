@@ -3,12 +3,10 @@ import React, { Component } from 'react';
 class Comment extends Component {
 
   render() {
-    const { comment } = this.props;
-
     return (
       <div>
         <li>
-          {comment.message}
+          {this.props.message}
         </li>
       </div>
     );
@@ -16,4 +14,4 @@ class Comment extends Component {
 
 };
 
-export default Review;
+export default Comment;
