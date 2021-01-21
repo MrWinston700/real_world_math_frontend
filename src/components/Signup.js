@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { sign_up } from '../actions/index'
+import { connect } from 'react-redux';
 import axios from "axios";
 
 class SignUp extends Component {
@@ -50,8 +52,11 @@ class SignUp extends Component {
         { withCredentials: true }
       )
       .then(response => {
+        console.log("i'm here in submit");
+        console.log(response.data);
         if (response.data.status === "created") {
-          this.props.handleSuccessfulAuth(response.data);
+          //instead of passing this as a prop as below, we'll need to store the data we get as a state in redux from here
+          this.props.sign_up(response.data);
         }
       })
       .catch(error => {
@@ -104,4 +109,13 @@ class SignUp extends Component {
   }
 }
 
-export default SignUp;
+const mapStateToProps = state => {
+  return { user: state.user }
+}
+const mapDispatchToProps = dispatch => {
+  return {
+    sign_up: (data) => dispatch(sign_up(data))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SignUp);

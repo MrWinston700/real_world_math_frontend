@@ -8,14 +8,14 @@ const rootReducer = combineReducers({
  
 export default rootReducer;
  
-function registrationReducer(state = [], action) {
+function registrationReducer(state = {loggedInStatus: "NOT_LOGGED_IN"}, action) {
   switch (action.type) {
     case "ADD_NEW_USER":
-      console.log("reducer file");
-      return [...state, action.user];
+      console.log("reducer file new user");
+      return {...state, user: action.user, loggedInStatus: "LOGGED_IN"};
     case "SIGN_IN":
-      console.log("inside sign in reducer");
-      return [...state, action.user];
+      console.log(state);
+      return {...state, user: action.user, loggedInStatus: "LOGGED_IN"};
     default:
       return state;
   }

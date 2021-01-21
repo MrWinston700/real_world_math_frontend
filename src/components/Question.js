@@ -15,7 +15,7 @@ class Question extends Component {
     return (
 
       <div>
-        <h1>Topic: </h1>
+        <h1>Tags: </h1>
         <h2>{my_question.read_me}</h2>
             <button onClick ={() => this.props.checkAnswer(my_question.multi_answers[0])} >{my_question.multi_answers[0]}</button>
             <button onClick ={() => this.props.checkAnswer(my_question.multi_answers[1])}>{my_question.multi_answers[1]}</button>

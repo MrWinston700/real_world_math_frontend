@@ -19,6 +19,7 @@ class QuestionContainer extends Component {
     // temporary fix for initial empty state recieved
     if (this.props.questionData.question) {
       console.log(this.props.questionData);
+      console.log(this.props.state);
       return (
         <div>
           <ul>
@@ -39,7 +40,7 @@ class QuestionContainer extends Component {
 
 const mapStateToProps = state => {
   console.log(state)
-  return { questionData: state.question }
+  return { questionData: state.question, state: state }
 }
 const mapDispatchToProps = dispatch => {
   return {

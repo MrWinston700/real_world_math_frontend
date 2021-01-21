@@ -4,19 +4,15 @@ export const sign_in = () => {
       fetch('http://localhost:3001/session').then(response => {
         return response.json()
       }).then(responseJSON => {console.log(responseJSON);
-        dispatch({ type: 'SIGN_IN', cats: responseJSON.images })
+        dispatch({ type: 'SIGN_IN', user: responseJSON})
       })
     }
   }
 
-  export const sign_up = () => {
+  export const sign_up = (userData) => {
+    console.log("hitting action new user")
     return (dispatch) => {
-        console.log("made it here sign_up");
-      fetch('http://localhost:3001/session').then(response => {
-        return response.json()
-      }).then(responseJSON => {console.log(responseJSON);
-        dispatch({ type: 'SIGN_UP', cats: responseJSON.images })
-      })
+        dispatch({ type: 'ADD_NEW_USER', user: userData })
     }
   }
 

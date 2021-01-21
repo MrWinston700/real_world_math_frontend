@@ -101,7 +101,7 @@ class SignIn extends Component {
 
 const mapStateToProps = state => {
   return {
-    catPics: state.cats,
+    user: state.registration[0].user,
     loading: state.loading
   }
 }
