@@ -16,6 +16,10 @@ function registrationReducer(state = {loggedInStatus: "NOT_LOGGED_IN"}, action) 
     case "SIGN_IN":
       console.log(state);
       return {...state, user: action.user, loggedInStatus: "LOGGED_IN"};
+
+    case "CURRENT_USER":
+      return {...state, user: action.user, loggedInStatus: "LOGGED_IN"};
+
     default:
       return state;
   }
@@ -25,6 +29,10 @@ function questionReducer(state = [], action) {
   switch (action.type) {
     case "GET_A_QUESTION":
       console.log("reducer file question");
+      return {...state, question: [action.question]}
+
+    case "RECIEVE_COMMENT":
+      console.log("new comments");
       return {...state, question: [action.question]}
 
     default:

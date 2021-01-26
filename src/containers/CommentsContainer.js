@@ -8,27 +8,31 @@ class CommentsContainer extends Component {
         //soso
     }
     render() {
-        console.log("I'm in comments container")
+        // In comment input, we can pass down the question and the user and then have this container send that back to rails to create a comment for the specific question
         console.log(this.props.comments)
         return (
           <div>
             <Comments comments={this.props.comments} />
             <CommentInput/>
-            
           </div>
         )
       }
     }
     
     const mapStateToProps = state => {
-      return {
-        comments: state.question.question[0].comments
+      if (state.registration.user) {
+        console.log(state.question.question[0].comments)
+        return {
+          comments: state.question.question[0].comments
+        }
+      } else {
+        return state
       }
     }
     
     const mapDispatchToProps = dispatch => ({
-      addReview: review => dispatch({ type: "ADD_REVIEW", review }),
-      deleteReview: id => dispatch({ type: "DELETE_REVIEW", id })
+      addComment: review => dispatch({ type: "ADD_COMMENT", review }),
+      deleteComment: id => dispatch({ type: "DELETE_COMMENT", id })
     })
     
     export default connect(mapStateToProps, mapDispatchToProps)(CommentsContainer)

@@ -42,6 +42,7 @@ const mapStateToProps = state => {
   console.log(state)
   return { questionData: state.question, state: state }
 }
+
 const mapDispatchToProps = dispatch => {
   return {
     get_question: () => dispatch(get_question())

@@ -52,9 +52,16 @@ class SignIn extends Component {
         { withCredentials: true }
       )
       .then(response => {
+        console.log("in handle event");
+        console.log(response);
         if (response.data.logged_in) {
+          console.log("in handle event");
+          console.log(response.data);
           this.props.sign_in(response.data);
+        } else {
+          console.log("email or password wrong or user does not exist")
         }
+        
       })
       .catch(error => {
         console.log("login error", error);
@@ -100,9 +107,14 @@ class SignIn extends Component {
 
 
 const mapStateToProps = state => {
-  return {
-    user: state.registration[0].user,
-    loading: state.loading
+  // the if statement is a temporary fix for not recieving a user yet.
+  if (state.registration[0] !== undefined) {
+
+  
+    return {
+      user: state.registration[0].user,
+      loading: state.loading
+    }
   }
 }
  

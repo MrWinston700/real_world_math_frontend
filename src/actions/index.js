@@ -16,6 +16,14 @@ export const sign_in = () => {
     }
   }
 
+// not a functional code as of yet. low priority
+export const get_current_user = (userData) => {
+  console.log("hitting action new user")
+  return (dispatch) => {
+    dispatch({ type: 'SET_CURRENT_USER', user: userData })
+  }
+}
+
 export const get_question = () => {
   return (dispatch) => {
     console.log("made it here get question");
@@ -26,3 +34,27 @@ export const get_question = () => {
       })
     }
   }
+
+  export const store_comment = (message, user_id, question_id) => {
+    let configObj = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      body: JSON.stringify({
+        'message': `${message}`,
+        'user_id': `${user_id}`,
+        'question_id': `${question_id}`
+      })
+    };
+    return (dispatch) => {
+      console.log("made it here store comment");
+
+      fetch('http://localhost:3001/comments', configObj).then(response => {
+        return response.json()
+      }).then(responseJSON => {console.log(responseJSON);
+        dispatch({ type: 'RECIEVE_COMMENTS', question: responseJSON })
+        })
+      }
+    }
