@@ -1,11 +1,7 @@
-export const sign_in = () => {
-    return (dispatch) => {
-        console.log("made it here sign in");
-      fetch('http://localhost:3001/session').then(response => {
-        return response.json()
-      }).then(responseJSON => {console.log(responseJSON);
-        dispatch({ type: 'SIGN_IN', user: responseJSON})
-      })
+import swal from 'sweetalert';
+export const sign_in = (userData) => {
+  return (dispatch) => {
+    dispatch({ type: 'SIGN_IN', user: userData })
     }
   }
 
@@ -16,7 +12,7 @@ export const sign_in = () => {
     }
   }
 
-// not a functional code as of yet. low priority
+// not a functional code as of yet. medium priority
 export const get_current_user = (userData) => {
   console.log("hitting action new user")
   return (dispatch) => {
@@ -54,7 +50,10 @@ export const get_question = () => {
       fetch('http://localhost:3001/comments', configObj).then(response => {
         return response.json()
       }).then(responseJSON => {console.log(responseJSON);
-        dispatch({ type: 'RECIEVE_COMMENTS', question: responseJSON })
+        if (responseJSON.question) {
+          swal("Comment saved");
+          dispatch({ type: 'RECIEVE_COMMENTS', question: responseJSON })
+        }
         })
       }
     }

@@ -6,56 +6,49 @@ import {
   Route
 } from 'react-router-dom';
 import Home from './components/Home';
+import About from './components/About';
 import SignUp from './components/Signup'
 import SignIn from './components/Signin';
 import QuestionContainer from './containers/QuestionContainer'
 import React, { Component } from 'react';
-import axios from 'axios'
 import Dashboard from './components/Dashboard'
+import { connect } from 'react-redux';
 
 class App extends Component {
-  
-
-
-
-  // checkLogInStatus() {
-  //   axios.get("http://localhost:3001/logged_in", { withCredentials: true})
-  //   .then(response => {
-  //     if (response.data.logged_in && this.state.loggedInStatus === "NOT_LOGGED_IN") {
-  //       this.setState({
-  //         loggedInStatus: "LOGGED_IN",
-  //         user: response.data.user
-  //       })
-  //     } else if (!response.data.logged_in && this.state.loggedInStatus === "LOGGED_IN") {
-  //       this.setState({
-  //         loggedInStatus: "NOT_LOGGED_IN",
-  //         user: {}
-  //       })
-  //     }
-  //   })
-  //   .catch(error => {console.log("check login error", error)})
-  // }
-
-  // componentDidMount() {
-  //   this.checkLogInStatus();
-  // }
 
   render() {
   return (
     <div className="App">
-      {/* <Dashboard loggedInStatus={this.state.loggedInStatus}/> */}
+      
       <Router>
       <div>
         <Navbar />
         <Route exact path="/question" component={QuestionContainer} />
         <Route exact path="/" component={Home} />
+        <Route exact path="/about" component={About} />
         <Route exact path="/signin" component={SignIn} />
         <Route exact path="/signup" component={SignUp} />
       </div>
     </Router>
+    <Dashboard loggedInStatus={this.props.loggedInStatus} user={this.props.user}/>
     </div>
   );
   }
 }
 
-export default App;
+const mapStateToProps = state => {
+  debugger
+  console.log(state);
+  
+  if (state.registration.user) {
+    return {
+      user: state.registration.user.user.email, loggedInStatus: state.registration.loggedInStatus
+    }
+  } else {
+    return {
+      user: "no user Logged in", loggedInStatus: state.registration.loggedInStatus
+    }
+  }
+}
+
+export default connect(mapStateToProps)(App);

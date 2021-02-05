@@ -2,11 +2,10 @@ import React from "react";
 
 const Dashboard = props => {
   return (
-    <div>
-      <div>
-        <h1>Dashboard</h1>
-        <h1>Status: {props.loggedInStatus}</h1>
-      </div>
+    <div id="dashboard">
+        <h2>Dashboard</h2>
+        <h3>Status: {props.loggedInStatus}</h3>
+        <h3>User: {props.user}</h3>
     </div>
   );
 };

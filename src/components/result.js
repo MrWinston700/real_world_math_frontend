@@ -1,13 +1,14 @@
+import swal from 'sweetalert';
 
 const result = (response) => {
     console.log(response)
     if (response === true) {
         return (
-            alert("correct")
+            swal("Good job!", "You got it!", "success")
         );
     } else {
         return (
-            alert("incorrect")
+            swal("So close!", "Yet so far", "error")
             );
     }
 };

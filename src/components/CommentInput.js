@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { store_comment } from '../actions/index'
+import swal from 'sweetalert';
 
 class CommentInput extends Component {
 
@@ -15,7 +16,7 @@ class CommentInput extends Component {
   }
 
   checkForAUser() {
-    if (this.props.user && this.props.question) {
+    if (this.props.user) {
       return true
     } else {
       return false
@@ -28,7 +29,12 @@ class CommentInput extends Component {
     // something like below but it will be a dispatch to a post request
     //this.props.addRestaurant(this.state.text);
 
-    this.props.store_comment(this.state.message, this.props.user, this.props.question );
+    if (this.checkForAUser()){
+      console.log("the check user method somewhat works");
+      this.props.store_comment(this.state.message, this.props.user, this.props.question );
+    } else {
+      swal("Submit Failed", "You need to be logged in to submit a comment");
+    }
     this.setState({
       message: '',
     });
@@ -38,11 +44,13 @@ class CommentInput extends Component {
     return (
       <div>
         <form onSubmit={(event) => this.handleOnSubmit(event)}>
-          <input
+          <textarea
+            id="commentInput"
             type="text"
+            placeholder="Add a comment"
             value={this.state.message}
             onChange={(event) => this.handleOnChange(event)} />
-          <input type="submit" />
+          <input type="submit" id="commentInputSubmit"/>
         </form>
       </div>
     );
@@ -52,7 +60,7 @@ class CommentInput extends Component {
 const mapStateToProps = state => {
   // the if statement is a temporary fix for not recieving a user yet.
   if (state.registration.user !== undefined) {
-    
+    console.log(state);
   
     return {
       user: state.registration.user.user.id,

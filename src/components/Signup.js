@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { sign_up } from '../actions/index'
 import { connect } from 'react-redux';
 import axios from "axios";
+import swal from 'sweetalert';
 
 class SignUp extends Component {
   constructor(props) {
@@ -37,6 +38,7 @@ class SignUp extends Component {
   }
 
   handleSubmit(event) {
+    event.preventDefault();
     const { email, password, password_confirmation } = this.state;
 
     axios
@@ -52,21 +54,19 @@ class SignUp extends Component {
         { withCredentials: true }
       )
       .then(response => {
-        console.log("i'm here in submit");
-        console.log(response.data);
         if (response.data.status === "created") {
-          //instead of passing this as a prop as below, we'll need to store the data we get as a state in redux from here
+          swal("Welcome!", "You have been logged in");
           this.props.sign_up(response.data);
+        } else {
+          swal("Log in Failed", "email or password is incorrect");
         }
       })
       .catch(error => {
         console.log("registration error", error);
       });
-    event.preventDefault();
   }
 
   render() {
-    console.log("signup");
     return (
       
       <div>

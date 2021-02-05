@@ -26,12 +26,13 @@ class CommentsContainer extends Component {
           comments: state.question.question[0].comments
         }
       } else {
+        alert("you need to be logged in to see comments");
         return state
       }
     }
     
+    //this dispatch is not funtional. priority medium
     const mapDispatchToProps = dispatch => ({
-      addComment: review => dispatch({ type: "ADD_COMMENT", review }),
       deleteComment: id => dispatch({ type: "DELETE_COMMENT", id })
     })
     

@@ -107,6 +107,7 @@
 
 /* this is our whole body */
 body {
+  display: grid;
   background-image: url(https://images.pexels.com/photos/691668/pexels-photo-691668.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
   background-size: auto;
   margin:0;
@@ -128,6 +129,7 @@ nav {
 }
 
 nav ul{
+  height: 50px;
   float: right;
   margin-right: 30px;
 }
@@ -137,11 +139,94 @@ nav ul{
   list-style-type: none;
   display: inline-block;
   transition: 0.7s all;
-  padding: 30px;
+  padding: 15px;
   text-decoration: none;
   color: #fff;
 }
 
 .navLinks:hover {
   background-color:#088;
+}
+
+/* below this is for comments and comment input */
+#commentInput {
+  width:60%;
+  height:90px;
+  background-color:#F0F8FF;
+  color:black;
+  border:none;
+  padding:2%;
+  font:22px/30px sans-serif;
+  opacity: .8;
+  margin: auto;
+  margin-left: 145px;
+}
+
+#commentInputSubmit {
+  background-color:yellowgreen;
+  color:white;
+  padding:5px;
+  font-size:18px;
+  border:none;
+  padding:8px;
+  margin-left: 50px;
+  margin-top: 300px;
+}
+
+#comments {
+  width:60%;
+  height:90px;
+  background-color:#F0F8FF;
+  color:black;
+  border:none;
+  padding:2%;
+  font:22px/30px sans-serif;
+  opacity: .8;
+  margin: auto;
+  margin-top: 200px;
+  flex: 1;
+
+}
+
+#content {
+  display: flex;
+  flex-direction: column;
+  min-height: 50vh;
+}
+
+
+#dashboard {
+  margin: auto;
+  margin-top: 200px;
+}
+
+/* for about page */
+#about {
+  font:22px/30px sans-serif;
+  text-align: center;
+  margin: auto;
+}
+
+/* specifically built for question button. temporary */
+button {
+    background-color: grey; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    grid-gap: 20px;
+}
+
+#like {
+  text-decoration-color: hotpink;
+  color: #61dafb;
+}
+
+#quote {
+  font:22px/30px sans-serif;
+  text-align: center;
+  margin: auto;
 }

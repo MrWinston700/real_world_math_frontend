@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from "axios";
 import { connect } from 'react-redux';
 import { sign_in } from '../actions/index'
+import swal from 'sweetalert';
 
 class SignIn extends Component {
   constructor(props) {
@@ -38,6 +39,7 @@ class SignIn extends Component {
   }
 
   handleSubmit(event) {
+    event.preventDefault();
     const { email, password } = this.state;
 
     axios
@@ -52,21 +54,19 @@ class SignIn extends Component {
         { withCredentials: true }
       )
       .then(response => {
-        console.log("in handle event");
-        console.log(response);
         if (response.data.logged_in) {
-          console.log("in handle event");
           console.log(response.data);
           this.props.sign_in(response.data);
+          swal("Log in successful", "...Glad you're back!");
         } else {
-          console.log("email or password wrong or user does not exist")
+          swal("Log in Failed", "email or password is incorrect");
         }
         
       })
       .catch(error => {
         console.log("login error", error);
       });
-    event.preventDefault();
+    
   }
 
   render() {
@@ -108,6 +108,7 @@ class SignIn extends Component {
 
 const mapStateToProps = state => {
   // the if statement is a temporary fix for not recieving a user yet.
+  console.log(state);
   if (state.registration[0] !== undefined) {
 
   
@@ -120,7 +121,7 @@ const mapStateToProps = state => {
  
 const mapDispatchToProps = dispatch => {
   return {
-    sign_in: () => dispatch(sign_in())
+    sign_in: (data) => dispatch(sign_in(data))
   }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(SignIn)
