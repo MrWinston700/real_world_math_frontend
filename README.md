@@ -1,70 +1,57 @@
-# Getting Started with Create React App
+# real_world_math_frontend README
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is frontend section. will need a the backend to this project which you can find here: 
 
-## Available Scripts
+https://github.com/superHotStuff/real_world_math_backend
 
-In the project directory, you can run:
+# Video Walkthrough
 
-### `yarn start`
+# real_world_math_frontend (front end)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+This was built using a Rails API back end, which communicates with the front end, built with React and Redux.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). 
 
-### `yarn test`
+## Overview
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This project was made with goal of being multuple choice question and answer for real world math problems. However, questions right now are very basic as i'm still building out some features.
 
-### `yarn build`
+## Installation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Fork and clone repo
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    $ git clone https://github.com/superHotStuff/real_world_math_frontend
+    $ git clone https://github.com/superHotStuff/real_world_math_backend
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Using two terminals, switch to each respective directory
 
-### `yarn eject`
+    $ cd real_world_math_frontend
+    $ cd real_world_math_backend
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Backend terminal instructions: 
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    $ bundle install
+    $ rails db:migrate
+    $ rails db:seed
+    $ rails s
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Frontend terminal instructions: 
+    
+    $ npm install
+    $ npm start
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Usage
 
-## Learn More
+    Default home page will give a random quote from an api for inspiration
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    You can sign up or sign in via the nav bar button at the top to store already answered questions, and also leave comments underneath a given question
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+    The get question button will give a question with multiple choice questions
 
-### Code Splitting
+## Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
-### Analyzing the Bundle Size
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
