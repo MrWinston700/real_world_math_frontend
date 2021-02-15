@@ -13,8 +13,31 @@ import QuestionContainer from './containers/QuestionContainer'
 import React, { Component } from 'react';
 import Dashboard from './components/Dashboard'
 import { connect } from 'react-redux';
+import axios from "axios";
+import { sign_in } from './actions/index'
 
 class App extends Component {
+
+  checkLoginStatus() {
+    axios
+      .get("http://localhost:3001/check_logged_in", { withCredentials: true })
+      .then(response => {
+        if (
+          response.data.logged_in && this.props.loggedInStatus === "NOT_LOGGED_IN"
+        ) {
+          console.log(response.data)
+          this.props.sign_in(response.data);
+          }
+        })
+      .catch(error => {
+        console.log("check login error", error);
+      });
+  }
+
+  componentDidMount() {
+    console.log("mounting works")
+    this.checkLoginStatus();
+  }
 
   render() {
   return (
@@ -37,10 +60,9 @@ class App extends Component {
 }
 
 const mapStateToProps = state => {
-  debugger
   console.log(state);
-  
-  if (state.registration.user) {
+  debugger
+  if (state.registration.user && state.registration.user.user !== undefined) {
     return {
       user: state.registration.user.user.email, loggedInStatus: state.registration.loggedInStatus
     }
@@ -51,4 +73,10 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps)(App);
+const mapDispatchToProps = dispatch => {
+  return {
+    sign_in: (data) => dispatch(sign_in(data))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

@@ -19,6 +19,10 @@ function registrationReducer(state = {loggedInStatus: "NOT_LOGGED_IN"}, action) 
 
     case "CURRENT_USER":
       return {...state, user: action.user, loggedInStatus: "LOGGED_IN"};
+      
+    case "RESET_USER":
+      console.log("made it reset user");
+      return {...state, user: action.user, loggedInStatus: "NOT_LOGGED_IN"};
 
     default:
       return state;

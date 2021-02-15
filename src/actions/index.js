@@ -31,6 +31,15 @@ export const get_question = () => {
     }
   }
 
+  export const log_out = () => {
+    return (dispatch) => {
+      console.log("made it here log out");
+        dispatch({ type: 'RESET_USER', user: {} })
+      }
+    }
+
+
+
   export const store_comment = (message, user_id, question_id) => {
     let configObj = {
       method: "POST",
