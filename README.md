@@ -56,6 +56,15 @@ Frontend terminal instructions:
 
     The get question button will give a question with multiple choice questions
 
+## challenge
+
+Most challenging aspect of this project was changing data through redux
+
+## future implementations
+
+ ui overhaul
+ Email to be sent out weekly to user with new question
+
 ## Contributing
 
 This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
