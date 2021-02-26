@@ -1,4 +1,5 @@
 import React, { Component }from 'react'
+import Dashboard from './components/Dashboard'
 
 class Home extends Component {
 
@@ -37,7 +38,10 @@ class Home extends Component {
       <div id="quote">
         {this.state.quote}
         - {this.state.author}
+
+        <Dashboard loggedInStatus={this.props.loggedInStatus} user={this.props.user}/>
       </div>
+      
       
     )
   }
@@ -45,3 +49,19 @@ class Home extends Component {
 }
 
 export default Home;
+
+const mapStateToProps = state => {
+  console.log(state);
+  debugger
+  if (state.registration.user && state.registration.user.user !== undefined) {
+    return {
+      user: state.registration.user.user.email, loggedInStatus: state.registration.loggedInStatus
+    }
+  } else {
+    return {
+      user: "no user Logged in", loggedInStatus: state.registration.loggedInStatus
+    }
+  }
+}
+
+export default connect(mapStateToProps)(Home);
