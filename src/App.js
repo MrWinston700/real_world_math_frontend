@@ -11,7 +11,6 @@ import SignUp from './components/Signup'
 import SignIn from './components/Signin';
 import QuestionContainer from './containers/QuestionContainer'
 import React, { Component } from 'react';
-import Dashboard from './components/Dashboard'
 import { connect } from 'react-redux';
 import axios from "axios";
 import { sign_in } from './actions/index'
@@ -53,7 +52,6 @@ class App extends Component {
         <Route exact path="/signup" component={SignUp} />
       </div>
     </Router>
-    <Dashboard loggedInStatus={this.props.loggedInStatus} user={this.props.user}/>
     </div>
   );
   }
@@ -64,11 +62,11 @@ const mapStateToProps = state => {
   debugger
   if (state.registration.user && state.registration.user.user !== undefined) {
     return {
-      user: state.registration.user.user.email, loggedInStatus: state.registration.loggedInStatus
+      loggedInStatus: state.registration.loggedInStatus
     }
   } else {
     return {
-      user: "no user Logged in", loggedInStatus: state.registration.loggedInStatus
+      loggedInStatus: state.registration.loggedInStatus
     }
   }
 }
