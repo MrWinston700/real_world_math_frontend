@@ -1,5 +1,6 @@
 import React, { Component }from 'react'
-import Dashboard from './components/Dashboard'
+import Dashboard from './Dashboard'
+import { connect } from 'react-redux';
 
 class Home extends Component {
 
@@ -47,8 +48,6 @@ class Home extends Component {
   }
 
 }
-
-export default Home;
 
 const mapStateToProps = state => {
   console.log(state);
