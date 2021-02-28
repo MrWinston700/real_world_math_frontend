@@ -61,7 +61,7 @@ const mapStateToProps = state => {
   // the if statement is a temporary fix for not recieving a user yet.
   if (state.registration.user !== undefined) {
     console.log(state);
-  
+    debugger
     return {
       user: state.registration.user.user.id,
       question: state.question.question[0].question.id
