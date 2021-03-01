@@ -4,6 +4,13 @@ import Comments from  '../components/Comments'
 import { connect } from 'react-redux';
 class CommentsContainer extends Component {
 
+
+  componentDidMount() {
+    console.log(this.props.user)
+    if (this.props.user === undefined) {
+      alert("you need to be logged in to see comments");
+    }
+  }
     saveAComment(data){
         //soso
     }
@@ -23,10 +30,12 @@ class CommentsContainer extends Component {
       if (state.registration.user) {
         console.log(state.question.question[0].comments)
         return {
-          comments: state.question.question[0].comments
+          comments: state.question.question[0].comments,
+          user: state.registration.user
+
         }
       } else {
-        alert("you need to be logged in to see comments");
+        
         return state
       }
     }
