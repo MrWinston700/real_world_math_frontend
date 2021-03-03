@@ -1,6 +1,6 @@
 # real_world_math_frontend README
 
-This is frontend section. will need a the backend to this project which you can find here: 
+This is frontend section. will need the backend to this project which you can find here: 
 
 https://github.com/superHotStuff/real_world_math_backend
 
