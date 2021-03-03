@@ -62,10 +62,11 @@ Most challenging aspect of this project was changing data through redux
 
 ## future implementations
 
- ui overhaul
- Email to be sent out weekly to user with new question
+Here's a link to my project board with all future implementations https://github.com/MrWinston700/real_world_math_frontend/projects/1
 
 ## Contributing
+
+If you would like to work on this project, that would be really cool. Message me at onestarrecruit@gmail.com
 
 This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
