@@ -10,11 +10,11 @@ https://www.youtube.com/watch?v=labv9iRqKQo&feature=emb_logo
 
 ## tools used
 
-React/Redux, Javascript, Ruby on Rails, React router
+React/Redux, JavaScript, Ruby on Rails, React router
 
 ## features
 
-Api that fetches a random inspirational quote.
+API that fetches a random inspirational quote.
 Users will get a random question from the backend database.
 Users can sign in or sign up to post comments under a question.
 
