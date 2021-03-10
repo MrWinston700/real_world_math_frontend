@@ -4,19 +4,19 @@ This is frontend section. will need the backend to this project which you can fi
 
 https://github.com/superHotStuff/real_world_math_backend
 
-# Video Walkthrough
+## Video Walkthrough
 
 https://www.youtube.com/watch?v=labv9iRqKQo&feature=emb_logo
 
-# tools used
+## tools used
 
 React/Redux, Javascript, Ruby on Rails, React router
 
-# features
+## features
 
-Api that fetches a random inspirational quote
-Users will get a random question from the backend database
-Users can sign in or sign up to post comments under a question
+Api that fetches a random inspirational quote.
+Users will get a random question from the backend database.
+Users can sign in or sign up to post comments under a question.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). 
 
@@ -50,15 +50,15 @@ Frontend terminal instructions:
 
 ## Usage
 
-    Default home page will give a random quote from an api for inspiration
+Default home page will give a random quote from an api for inspiration.
 
-    You can sign up or sign in via the nav bar button at the top to store already answered questions, and also leave comments underneath a given question
+You can sign up or sign in via the nav bar button at the top to store already answered questions, and also leave comments underneath a given question.
 
-    The get question button will give a question with multiple choice questions
+The get question button will give a question with multiple choice questions.
 
 ## challenge
 
-Most challenging aspect of this project was changing data through redux
+Most challenging aspect of this project was changing data through redux.
 
 ## future implementations
 
@@ -66,7 +66,7 @@ Here's a link to my project board with all future implementations https://github
 
 ## Contributing
 
-If you would like to work on this project, that would be really cool. Message me at onestarrecruit@gmail.com
+If you would like to work on this project, that would be really cool. Message me at onestarrecruit@gmail.com.
 
 This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
