@@ -21,7 +21,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Overview
 
-This project was made with goal of being multuple choice question and answer for real world math problems. However, questions right now are very basic as i'm still building out some features.
+This project was made with goal of being multuple choice question and answer for real world math problems. However, questions right now are very basic as I'm still building out some features.
 
 ## Installation
 
