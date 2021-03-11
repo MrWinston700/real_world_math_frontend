@@ -7,7 +7,7 @@ https://github.com/superHotStuff/real_world_math_backend
 
 https://www.youtube.com/watch?v=labv9iRqKQo&feature=emb_logo
 
-## tools used
+## Tools Used
 
 React/Redux, JavaScript, Ruby on Rails, React router
 
@@ -59,7 +59,7 @@ The get question button will give a question with multiple choice questions.
 
 Most challenging aspect of this project was changing data through Redux.
 
-## future implementations
+## Future Implementations
 
 Here's a link to my project board with all future implementations https://github.com/MrWinston700/real_world_math_frontend/projects/1
 
