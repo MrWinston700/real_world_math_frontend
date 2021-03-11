@@ -1,5 +1,4 @@
-# real_world_math_frontend README
-
+# real_world_math_frontend
 This is frontend section. will need the backend to this project which you can find here: 
 
 https://github.com/superHotStuff/real_world_math_backend
@@ -58,7 +57,7 @@ The get question button will give a question with multiple choice questions.
 
 ## challenge
 
-Most challenging aspect of this project was changing data through redux.
+Most challenging aspect of this project was changing data through Redux.
 
 ## future implementations
 
