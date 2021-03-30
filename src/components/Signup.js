@@ -55,7 +55,7 @@ class SignUp extends Component {
       )
       .then(response => {
         if (response.data.status === "created") {
-          swal("Welcome!", "You have been logged in");
+          this.handlesuccess();
           this.props.sign_up(response.data);
         } else {
           swal("Log in Failed", "email or password is incorrect");
@@ -64,6 +64,13 @@ class SignUp extends Component {
       .catch(error => {
         console.log("registration error", error);
       });
+  }
+
+  handlesuccess () {  
+    swal("Welcome!", "You have been logged in");
+    setInterval(function() {
+      window.open("http://localhost:3000");
+      }, 1000);
   }
 
   render() {
