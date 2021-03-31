@@ -20,6 +20,7 @@ class Home extends Component {
       return response.json();
     })
     .then(function(data) {
+      console.log("still hit this though")
       const info = data[Math.floor(Math.random() * data.length)]
       console.log(info)
       quoteData = info

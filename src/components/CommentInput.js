@@ -59,12 +59,16 @@ class CommentInput extends Component {
 
 const mapStateToProps = state => {
   // the if statement is a temporary fix for not recieving a user yet.
-  if (state.registration.user !== undefined) {
+  if (state.registration.user.user !== undefined) {
     console.log(state);
     debugger
     return {
       user: state.registration.user.user.id,
       question: state.question.question[0].question.id
+    }
+  } else {
+    return {
+      state
     }
   }
 }

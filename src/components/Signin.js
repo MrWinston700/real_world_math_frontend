@@ -57,7 +57,9 @@ class SignIn extends Component {
         if (response.data.logged_in) {
           console.log(response.data);
           this.props.sign_in(response.data);
+          this.handlesuccess()
           swal("Log in successful", "...Glad you're back!");
+
         } else {
           swal("Log in Failed", "email or password is incorrect");
         }
@@ -69,11 +71,15 @@ class SignIn extends Component {
     
   }
 
+  handlesuccess () {  
+    swal("Log in successful", "...Glad you're back!");
+    setInterval(function() {
+      window.open("http://localhost:3000");
+      }, 1000);
+  }
+
   render() {
-    console.log("signin");
     return (
-      
-      
       <div>
         <div className="form-popup" id="myForm">
           <form className="form-container" onSubmit={this.handleSubmit}>
