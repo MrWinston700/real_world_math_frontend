@@ -105,11 +105,10 @@
   opacity: 1;
 }
 
-/* this is our whole body */
+/* this is our whole body.... repeating radial gradient is just a replacement for linear gradient due to bug; change if need to */
 body {
-  display: grid;
-  background-image: url(https://images.pexels.com/photos/691668/pexels-photo-691668.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
-  background-size: auto;
+  
+  background: repeating-radial-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2) ), url("https://images.pexels.com/photos/691668/pexels-photo-691668.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260") no-repeat center center fixed;
   margin:0;
   padding:0;
   font-family: verdana;
@@ -205,6 +204,7 @@ nav ul{
   font:22px/30px sans-serif;
   text-align: center;
   margin: auto;
+  color: whitesmoke;
 }
 
 /* specifically built for question button. temporary */
@@ -226,7 +226,16 @@ button {
 }
 
 #quote {
-  font:22px/30px sans-serif;
+  font:30px/30px sans-serif;
   text-align: center;
   margin: auto;
+  color: whitesmoke;
+}
+
+@media screen and (max-width: 800px) {
+  .App, header, footer {
+    width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+    display: grid;
+    grid-template-columns: 1fr;
+  }
 }

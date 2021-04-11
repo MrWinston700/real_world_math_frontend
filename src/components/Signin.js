@@ -74,7 +74,7 @@ class SignIn extends Component {
   handlesuccess () {  
     swal("Log in successful", "...Glad you're back!");
     setInterval(function() {
-      window.open("http://localhost:3000");
+      window.location.replace("http://localhost:3000");
       }, 1000);
   }
 
